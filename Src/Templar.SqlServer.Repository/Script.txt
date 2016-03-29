@@ -1,0 +1,10 @@
+﻿create database Templar 
+use templar
+create table Clues 
+(
+	Id uniqueidentifier primary  key, 
+	DueDate datetime not null, 
+	Content varchar(max) not null, 
+	Source varchar(512) not null
+)
+
