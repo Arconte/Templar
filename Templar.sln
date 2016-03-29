@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Domain", "00 Domain", "{03C5BC24-9F4F-4A5E-BA29-709459CF811E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Domain", "Src\Templar.Domain\Templar.Domain.csproj", "{C8BE2E9A-BC38-4486-88AC-E6BB9E1A0398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Domain.Services", "Src\Templar.Domain.Services\Templar.Domain.Services.csproj", "{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8BE2E9A-BC38-4486-88AC-E6BB9E1A0398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BE2E9A-BC38-4486-88AC-E6BB9E1A0398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8BE2E9A-BC38-4486-88AC-E6BB9E1A0398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8BE2E9A-BC38-4486-88AC-E6BB9E1A0398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8BE2E9A-BC38-4486-88AC-E6BB9E1A0398} = {03C5BC24-9F4F-4A5E-BA29-709459CF811E}
+		{0CE30B10-3B56-47BC-88F7-D06228AC8F1B} = {03C5BC24-9F4F-4A5E-BA29-709459CF811E}
+	EndGlobalSection
+EndGlobal
