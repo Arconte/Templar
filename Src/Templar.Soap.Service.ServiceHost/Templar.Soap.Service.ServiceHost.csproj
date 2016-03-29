@@ -71,7 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,7 +93,7 @@
       <Project>{6b758cc3-d455-4e0c-88f3-5e69149a11e2}</Project>
       <Name>Templar.Soap.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Templar.SqlServer.Repository\Templar.Repository.SqlServer.csproj">
+    <ProjectReference Include="..\Templar.Repository.SqlServer\Templar.Repository.SqlServer.csproj">
       <Project>{b5e27fd3-67f7-47c8-b12c-801fa4e3d272}</Project>
       <Name>Templar.Repository.SqlServer</Name>
     </ProjectReference>
