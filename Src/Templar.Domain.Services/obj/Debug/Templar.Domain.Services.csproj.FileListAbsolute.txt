@@ -1,5 +1,0 @@
-D:\Arconte\Templar\Src\Templar.Domain.Services\bin\Debug\Templar.Domain.Services.dll
-D:\Arconte\Templar\Src\Templar.Domain.Services\bin\Debug\Templar.Domain.Services.pdb
-D:\Arconte\Templar\Src\Templar.Domain.Services\obj\Debug\Templar.Domain.Services.csprojResolveAssemblyReference.cache
-D:\Arconte\Templar\Src\Templar.Domain.Services\obj\Debug\Templar.Domain.Services.dll
-D:\Arconte\Templar\Src\Templar.Domain.Services\obj\Debug\Templar.Domain.Services.pdb
