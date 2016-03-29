@@ -9,9 +9,7 @@ using Templar.Domain.Values;
 namespace Templar.Domain.Services.Services
 {
     public interface IClueDomainService
-    {       
-
+    {   
         void Add(Guid Id, string Content, DateTime DueDate, string Source);        
-
     }
 }

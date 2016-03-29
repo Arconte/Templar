@@ -13,6 +13,6 @@ namespace Templar.Domain.Services.Repositories
         IEnumerable<ClueEntity> Search();
         void Add(ClueEntity Value);
         void Update(ClueEntity Value);
-        void Delete(ClueEntity Value);
+        void Delete(Guid Id);
     }
 }

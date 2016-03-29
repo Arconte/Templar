@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Templar.Domain.Entities;
 using Templar.Domain.Services.Repositories;
 using Templar.Domain.Values;
+using Templar.Repository.SqlServer.Model;
 
 namespace Templar.Repository.SqlServer
 {
@@ -24,12 +25,21 @@ namespace Templar.Repository.SqlServer
             {
                 var clue = this.Mapper.Map<Model.Clue>(Value);
                 db.Clues.Add(clue);
+                db.SaveChanges();  
             }
         }
 
-        public void Delete(ClueEntity Value)
+        public void Delete(Guid Id)
         {
-            throw new NotImplementedException();
+            using (var db = new Model.TemplarContext())
+            {
+                var clue = db.Clues.Where(c => c.Id == Id ).FirstOrDefault();
+                if (clue != null)
+                {
+                    db.Clues.Remove(clue);
+                    db.SaveChanges();  
+                }                
+            }
         }
 
         public IEnumerable<ClueEntity> Search()
@@ -39,7 +49,17 @@ namespace Templar.Repository.SqlServer
 
         public void Update(ClueEntity Value)
         {
-            throw new NotImplementedException();
+            using (var db = new Model.TemplarContext())
+            {                
+                var clue = db.Clues.Where(c => c.Id == Id).FirstOrDefault();                
+                if (clue != null)
+                {
+                    clue.Content = Value.Content;
+                    clue.DueDate = Value.DueDate;
+                    clue.Source = Value.Source;                      
+                    db.SaveChanges();
+                }
+            }
         }
     }
 }
