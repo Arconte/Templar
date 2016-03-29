@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Templar.Soap.Service
 {
-    [ServiceContract(SessionMode= SessionMode.NotAllowed, Namespace = Constants.Namespace)]
-    public class IClueService
+    [ServiceContract(SessionMode= SessionMode.NotAllowed, Namespace = Constants.Namespace)]    
+    public interface IClueService
     {
-
-
+        [OperationContract]
+        void Add(Guid Id, string Source, string Content, DateTime DueDate);
     }
 }

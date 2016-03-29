@@ -7,8 +7,8 @@
     <ProjectGuid>{B5E27FD3-67F7-47C8-B12C-801FA4E3D272}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Templar.SqlServer.Repository</RootNamespace>
-    <AssemblyName>Templar.SqlServer.Repository</AssemblyName>
+    <RootNamespace>Templar.Repository.SqlServer</RootNamespace>
+    <AssemblyName>Templar.Repository.SqlServer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

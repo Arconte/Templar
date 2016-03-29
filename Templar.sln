@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Soap.Service.Imp", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 Repositories", "00 Repositories", "{4C36A3DD-EDF1-4554-95E1-3047C20B3BD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.SqlServer.Repository", "Src\Templar.SqlServer.Repository\Templar.SqlServer.Repository.csproj", "{B5E27FD3-67F7-47C8-B12C-801FA4E3D272}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Repository.SqlServer", "Src\Templar.SqlServer.Repository\Templar.Repository.SqlServer.csproj", "{B5E27FD3-67F7-47C8-B12C-801FA4E3D272}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

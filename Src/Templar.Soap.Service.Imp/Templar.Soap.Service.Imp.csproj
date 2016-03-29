@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Templar.Domain.Services\Templar.Domain.Services.csproj">
+      <Project>{0ce30b10-3b56-47bc-88f7-d06228ac8f1b}</Project>
+      <Name>Templar.Domain.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Templar.Soap.Service\Templar.Soap.Service.csproj">
       <Project>{6b758cc3-d455-4e0c-88f3-5e69149a11e2}</Project>
       <Name>Templar.Soap.Service</Name>

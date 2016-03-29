@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Templar.Domain.Entities;
 using Templar.Domain.Values;
 
-namespace Templar.SqlServer.Repository.Configuration
+namespace Templar.Repository.SqlServer.Configuration
 {
     public class MapperConfiguration
     {

@@ -1,4 +1,4 @@
-namespace Templar.SqlServer.Repository.Model
+namespace Templar.Repository.SqlServer.Model
 {
     using System;
     using System.Collections.Generic;

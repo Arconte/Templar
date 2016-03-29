@@ -1,31 +1,51 @@
-﻿using Microsoft.Practices.Unity;
+﻿using AutoMapper;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Templar.Domain.Services.Repositories;
+using Templar.Domain.Services.Services;
+using Templar.Repository.SqlServer;
 
 namespace Templar.Soap.Service.ServiceHost
 {
     class AppHostFactory : IDisposable
     {
-        private IUnityContainer _Container;
+        private IUnityContainer Container;
+        private IMapper Mapper;        
         private IClueService _CustomService;
         private System.ServiceModel.ServiceHost _CustomServiceHost;
         public void Start()
         {
-            _Container = new UnityContainer();
+            Container = new UnityContainer();
             ConfigureContainer();
-            ConfigureServices();
+
+            AutoMapper.MapperConfiguration conmapper = new AutoMapper.MapperConfiguration(
+                 (service) =>{
+                     var repcon = new Templar.Repository.SqlServer.Configuration.MapperConfiguration();
+                     repcon.Configure(service); 
+                 }
+                );
+            this.Mapper = conmapper.CreateMapper(); 
+            Configure();
         }
         public void Stop()
         {
             this.Dispose(true);
         }
         #region Configure Services
-        private void ConfigureServices()
+        private void Configure()
         {
-            this._CustomService = _Container.Resolve<IClueService>();
+
+            this.Container.RegisterInstance<IMapper>(this.Mapper);
+
+            var containerConfig = new Configurations.DependencyConfiguration();
+            containerConfig.Configure(this.Container);
+            
+            this._CustomService = Container.Resolve<IClueService>();
+
             _CustomServiceHost = new System.ServiceModel.ServiceHost(_CustomService);
             _CustomServiceHost.Open();
         }
@@ -33,7 +53,7 @@ namespace Templar.Soap.Service.ServiceHost
         #region Configure Container
         private void ConfigureContainer()
         {
-            this._Container.RegisterType<IClueService, ClueService>();
+            this.Container.RegisterType<IClueService, ClueService>();
         }
 
         #endregion
@@ -62,7 +82,7 @@ namespace Templar.Soap.Service.ServiceHost
                         this._CustomServiceHost.Abort();
                     }
                 }
-                if (this._Container != null) _Container.Dispose();
+                if (this.Container != null) Container.Dispose();
             }
             // get rid of unmanaged resources
         }

@@ -8,3 +8,4 @@ create table Clues
 	Source varchar(512) not null
 )
 
+	

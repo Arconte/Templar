@@ -24,8 +24,7 @@ namespace Templar.Soap.Service.ServiceHost
                 x.StartAutomaticallyDelayed();
                 x.SetDescription(ServiceName);
                 x.SetDisplayName(ServiceName);
-                x.SetServiceName(ServiceName);
-                x.EnableServiceRecovery(c => { c.OnCrashOnly(); });                
+                x.SetServiceName(ServiceName);                
                 x.RunAsNetworkService();
             }
          );

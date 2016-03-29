@@ -9,7 +9,7 @@ using Templar.Domain.Entities;
 using Templar.Domain.Services.Repositories;
 using Templar.Domain.Values;
 
-namespace Templar.SqlServer.Repository
+namespace Templar.Repository.SqlServer
 {
     public class ClueRepository : IClueRepository
     {
