@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Domain", "Src\Templ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Domain.Services", "Src\Templar.Domain.Services\Templar.Domain.Services.csproj", "{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{3E286D0B-6DBA-4A15-A92E-03214C241F4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Services", "02 Services", "{3E286D0B-6DBA-4A15-A92E-03214C241F4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Soap.Service", "Src\Templar.Soap.Service\Templar.Soap.Service.csproj", "{6B758CC3-D455-4E0C-88F3-5E69149A11E2}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Rest.Service.Imp", "Src\Templar.Rest.Service.Imp\Templar.Rest.Service.Imp.csproj", "{FD4A29F7-4177-4F40-9BB3-6BADD6616A5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Rest.Service.ServiceHost", "Src\Templar.Rest.Service.ServiceHost\Templar.Rest.Service.ServiceHost.csproj", "{753A8C9D-3959-4D14-8FE5-08964A178B89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 Acceptance Tests", "06 Acceptance Tests", "{8BCE8D83-E59C-49DE-A5C1-E3F0FD64E05F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Service.SmokeTest", "Tests\Templar.Service.SmokeTest\Templar.Service.SmokeTest.csproj", "{28D2B4B4-E28D-45CC-B51F-599D9188AA16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +77,10 @@ Global
 		{753A8C9D-3959-4D14-8FE5-08964A178B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{753A8C9D-3959-4D14-8FE5-08964A178B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{753A8C9D-3959-4D14-8FE5-08964A178B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D2B4B4-E28D-45CC-B51F-599D9188AA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D2B4B4-E28D-45CC-B51F-599D9188AA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D2B4B4-E28D-45CC-B51F-599D9188AA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D2B4B4-E28D-45CC-B51F-599D9188AA16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +97,6 @@ Global
 		{3DF1868B-FC8C-4C34-B680-FED38134F8C2} = {7E817161-5D6D-493B-B79E-91F850B4F623}
 		{FD4A29F7-4177-4F40-9BB3-6BADD6616A5A} = {7E817161-5D6D-493B-B79E-91F850B4F623}
 		{753A8C9D-3959-4D14-8FE5-08964A178B89} = {7E817161-5D6D-493B-B79E-91F850B4F623}
+		{28D2B4B4-E28D-45CC-B51F-599D9188AA16} = {8BCE8D83-E59C-49DE-A5C1-E3F0FD64E05F}
 	EndGlobalSection
 EndGlobal

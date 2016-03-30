@@ -16,6 +16,8 @@ namespace Templar.Soap.Service.ServiceHost.Configurations
         {
             Container.RegisterType<IClueRepository, ClueRepository>();
             Container.RegisterType<IClueDomainService, ClueDomainService>();
+
+            Container.RegisterType<IClueService, ClueService>(); 
         }
     }
 }

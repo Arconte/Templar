@@ -5,6 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using Templar.Domain.Services.Services;
+using Templar.Soap.Service.Model;
 
 namespace Templar.Soap.Service
 {
@@ -21,6 +22,11 @@ namespace Templar.Soap.Service
         public void Add(Guid Id, string Source, string Content, DateTime DueDate)
         {
             this.ClueDomainService.Add(Id, Content, DueDate, Source);  
+        }
+
+        public IEnumerable<ClueRp> Get()
+        {
+            return new List<ClueRp>(); 
         }
     }
 }

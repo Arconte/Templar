@@ -43,8 +43,8 @@ namespace Templar.Soap.Service.ServiceHost
             var containerConfig = new Configurations.DependencyConfiguration();
             containerConfig.Configure(this.Container);
             
-            this._CustomService = Container.Resolve<IClueService>();
 
+            this._CustomService = Container.Resolve<IClueService>();
             _CustomServiceHost = new System.ServiceModel.ServiceHost(_CustomService);
             _CustomServiceHost.Open();
         }
