@@ -47,16 +47,16 @@ namespace Templar.Repository.SqlServer
             return new List<ClueEntity>(); 
         }
 
-        public void Update(ClueEntity Value)
+        public void Update(ClueEntity Entity)
         {
             using (var db = new Model.TemplarContext())
             {                
-                var clue = db.Clues.Where(c => c.Id == Id).FirstOrDefault();                
+                var clue = db.Clues.Where(c => c.Id == Entity.Id).FirstOrDefault();                
                 if (clue != null)
                 {
-                    clue.Content = Value.Content;
-                    clue.DueDate = Value.DueDate;
-                    clue.Source = Value.Source;                      
+                    clue.Content = Entity.Content;
+                    clue.DueDate = Entity.DueDate;
+                    clue.Source = Entity.Source;                      
                     db.SaveChanges();
                 }
             }

@@ -11,8 +11,7 @@ namespace Templar.Soap.Service.ServiceHost.Configurations
     {
         public void Configure(IMapperConfiguration MapperConfiguration)
         {
-            var config = new Templar.Repository.SqlServer.Configuration.MapperConfiguration();
-            config.Configure(MapperConfiguration);  
+            
         }
     }
 }

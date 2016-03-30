@@ -2,25 +2,27 @@
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http.Dispatcher;
+using System.Web.Http.SelfHost;
 using Templar.Domain.Services.Repositories;
 using Templar.Domain.Services.Services;
 using Templar.Repository.SqlServer;
+using System.Web.Http;
 
-namespace Templar.Soap.Service.ServiceHost
+namespace Templar.Rest.Service.ServiceHost
 {
     class AppHostFactory : IDisposable
     {
         private IUnityContainer Container;
-        private IMapper Mapper;        
-        private IClueService _CustomService;
-        private System.ServiceModel.ServiceHost _CustomServiceHost;
+        private IMapper Mapper;
+        private HttpSelfHostServer Server;
         public void Start()
         {
-            Container = new UnityContainer();
-            
+            Container = new UnityContainer();           
 
             AutoMapper.MapperConfiguration conmapper = new AutoMapper.MapperConfiguration(
                  (service) =>{
@@ -39,14 +41,17 @@ namespace Templar.Soap.Service.ServiceHost
         private void Configure()
         {
             this.Container.RegisterInstance<IMapper>(this.Mapper);
-
             var containerConfig = new Configurations.DependencyConfiguration();
             containerConfig.Configure(this.Container);
             
-            this._CustomService = Container.Resolve<IClueService>();
-
-            _CustomServiceHost = new System.ServiceModel.ServiceHost(_CustomService);
-            _CustomServiceHost.Open();
+            var url = ConfigurationManager.AppSettings["rest:url"];
+            var config = new HttpSelfHostConfiguration(url);
+            config.DependencyResolver = new Configurations.UnityResolver(this.Container);
+            config.Services.Replace(typeof(IAssembliesResolver), new Configurations.CustomAssemblyResolver());            
+            config.MapHttpAttributeRoutes();
+            config.EnsureInitialized(); 
+            this.Server = new HttpSelfHostServer(config);
+            this.Server.OpenAsync().Wait(); 
         }
         #endregion
         
@@ -64,16 +69,9 @@ namespace Templar.Soap.Service.ServiceHost
         {
             if (disposing)
             {
-                if (this._CustomServiceHost != null)
-                {
-                    try
-                    {
-                        this._CustomServiceHost.Close();
-                    }
-                    catch (Exception)
-                    {
-                        this._CustomServiceHost.Abort();
-                    }
+                if (this.Server != null)
+                {                    
+                    this.Server.CloseAsync().Wait(); 
                 }
                 if (this.Container != null) Container.Dispose();
             }
