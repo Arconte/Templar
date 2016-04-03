@@ -1,0 +1,1 @@
+﻿nunit-console-x86.exe Templar.Service.SmokeTest.dll

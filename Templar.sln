@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Domain", "01 Domain", "{03C5BC24-9F4F-4A5E-BA29-709459CF811E}"
 EndProject
@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Rest.Service.Imp", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Rest.Service.ServiceHost", "Src\Templar.Rest.Service.ServiceHost\Templar.Rest.Service.ServiceHost.csproj", "{753A8C9D-3959-4D14-8FE5-08964A178B89}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 Acceptance Tests", "06 Acceptance Tests", "{8BCE8D83-E59C-49DE-A5C1-E3F0FD64E05F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 Tests", "06 Tests", "{8BCE8D83-E59C-49DE-A5C1-E3F0FD64E05F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Service.SmokeTest", "Tests\Templar.Service.SmokeTest\Templar.Service.SmokeTest.csproj", "{28D2B4B4-E28D-45CC-B51F-599D9188AA16}"
 EndProject
@@ -40,6 +40,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.ServiceAgent.Application", "Src\Templar.ServiceAgent.Application\Templar.ServiceAgent.Application.csproj", "{38D2599D-AF70-46D7-B9A1-F70418400F6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.ServiceAgent", "Src\Templar.ServiceAgent\Templar.ServiceAgent.csproj", "{479F48E8-E156-4460-B5E1-C3DA833FCBD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Service.FunctionalTest", "Tests\Templar.Service.FunctionalTest\Templar.Service.FunctionalTest.csproj", "{50A8D89B-3107-4957-98FA-1A48FE373C1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +97,10 @@ Global
 		{479F48E8-E156-4460-B5E1-C3DA833FCBD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479F48E8-E156-4460-B5E1-C3DA833FCBD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479F48E8-E156-4460-B5E1-C3DA833FCBD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50A8D89B-3107-4957-98FA-1A48FE373C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50A8D89B-3107-4957-98FA-1A48FE373C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50A8D89B-3107-4957-98FA-1A48FE373C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50A8D89B-3107-4957-98FA-1A48FE373C1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,5 +120,6 @@ Global
 		{28D2B4B4-E28D-45CC-B51F-599D9188AA16} = {8BCE8D83-E59C-49DE-A5C1-E3F0FD64E05F}
 		{38D2599D-AF70-46D7-B9A1-F70418400F6C} = {79A0107E-F2B3-4306-94F9-23243220C8A3}
 		{479F48E8-E156-4460-B5E1-C3DA833FCBD9} = {79A0107E-F2B3-4306-94F9-23243220C8A3}
+		{50A8D89B-3107-4957-98FA-1A48FE373C1A} = {8BCE8D83-E59C-49DE-A5C1-E3F0FD64E05F}
 	EndGlobalSection
 EndGlobal
