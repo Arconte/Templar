@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Domain", "01 Domain", "{03C5BC24-9F4F-4A5E-BA29-709459CF811E}"
 EndProject
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Domain", "Src\Templ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Domain.Services", "Src\Templar.Domain.Services\Templar.Domain.Services.csproj", "{0CE30B10-3B56-47BC-88F7-D06228AC8F1B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Services", "02 Services", "{3E286D0B-6DBA-4A15-A92E-03214C241F4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Internal Services", "02 Internal Services", "{3E286D0B-6DBA-4A15-A92E-03214C241F4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Templar.Soap.Service", "Src\Templar.Soap.Service\Templar.Soap.Service.csproj", "{6B758CC3-D455-4E0C-88F3-5E69149A11E2}"
 EndProject

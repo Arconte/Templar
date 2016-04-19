@@ -17,10 +17,15 @@ namespace Templar.Rest.Service.Imp
             this.ClueDomainService = ClueDomainService; 
         }
         [Route("")]
-        [HttpGet]
+        [HttpGet]        
         public IHttpActionResult Get()
         {
-            return this.Ok();  
+            var model = new { 
+                username  =  this.RequestContext.Principal.Identity.Name,
+                authenticationtype =  this.RequestContext.Principal.Identity.AuthenticationType,
+                windowsuser =  System.Security.Principal.WindowsPrincipal.Current.Identity.Name                
+            };            
+            return this.Ok(model);  
         }
     }
 }
