@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Templar.Rest.Service")]
+[assembly: AssemblyTitle("Templar.Rest.Model")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Templar.Rest.Service")]
+[assembly: AssemblyProduct("Templar.Rest.Model")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a084625f-c3c8-4399-8551-75bb9c104a5f")]
+[assembly: Guid("094ebde2-3fd3-4f31-a1ff-0ed68d984afb")]
 
 // Version information for an assembly consists of the following four values:
 //
