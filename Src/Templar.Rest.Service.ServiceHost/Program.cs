@@ -12,8 +12,6 @@ namespace Templar.Rest.Service.ServiceHost
         private const string ServiceName = "Sdp.Templar.SoapService.ServiceHost";        
         static void Main()
         {
-            AppDomain.CurrentDomain.SetPrincipalPolicy(System.Security.Principal.PrincipalPolicy.WindowsPrincipal);
-
             HostFactory.Run(x =>
             {
                 x.Service<AppHostFactory>(s =>

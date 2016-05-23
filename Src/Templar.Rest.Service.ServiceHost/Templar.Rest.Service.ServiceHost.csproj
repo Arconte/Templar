@@ -133,12 +133,8 @@
       <Project>{b5e27fd3-67f7-47c8-b12c-801fa4e3d272}</Project>
       <Name>Templar.Repository.SqlServer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Templar.Rest.Service.Imp\Templar.Rest.Service.Imp.csproj">
+    <ProjectReference Include="..\Templar.Rest.Service.Imp\Templar.Rest.Service.csproj">
       <Project>{fd4a29f7-4177-4f40-9bb3-6badd6616a5a}</Project>
-      <Name>Templar.Rest.Service.Imp</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Templar.Rest.Service\Templar.Rest.Service.csproj">
-      <Project>{3df1868b-fc8c-4c34-b680-fed38134f8c2}</Project>
       <Name>Templar.Rest.Service</Name>
     </ProjectReference>
   </ItemGroup>
