@@ -9,7 +9,7 @@ namespace Templar.Soap.Service.ServiceHost
 {
     static class Program
     {
-        private const string ServiceName = "Sdp.Templar.SoapService.ServiceHost";        
+        private const string ServiceName = "Templar.SoapService.ServiceHost";        
         static void Main()
         {            
             HostFactory.Run(x =>

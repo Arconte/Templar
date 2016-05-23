@@ -12,5 +12,7 @@ namespace Templar.Soap.Service.Model
     {
         [DataMember]
         public Guid Id { get; set; }
+        [DataMember]
+        public string Log { get; set; }
     }
 }

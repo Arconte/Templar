@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Templar.Service.Proxies;
 using Templar.Soap.Service;
-using Templar.Soap.Service.Proxies;
 
 namespace Templar.Service.SmokeTest
 {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Net;
 namespace Templar.Service.FunctionalTest.Scenarios
 {
     public class SampleScenario
@@ -25,7 +25,10 @@ namespace Templar.Service.FunctionalTest.Scenarios
             
             client.BaseAddress = new Uri("http://localhost:7778/");
             var response = client.GetAsync("api/clues").Result;
-            Assert.IsTrue(response.IsSuccessStatusCode);             
+            Assert.IsTrue(response.IsSuccessStatusCode);
+
+            var model = response.Content.ReadAsStringAsync().Result;  
+
         }
         public void ThenValidateResult()
         {

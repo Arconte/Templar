@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Templar.Soap.Service.Proxies
+namespace Templar.Service.Proxies
 {
     public class SandboxProxy<TServiceContract> : IDisposable
     {
