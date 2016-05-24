@@ -7,25 +7,24 @@
     <overwrite-existing-data>true</overwrite-existing-data>
   </processing-directives>
   <schedule>
-
     <job>
-      <name></name>
-      <group></group>
-      <description></description>
-      <job-type></job-type>
+      <name>SampleJob</name>
+      <group>SampleGroup</group>
+      <description>SampleGroup</description>
+      <job-type>Templar.ServiceAgent.Jobs.JobSample, Templar.ServiceAgent</job-type>
       <durable>false</durable>
       <recover>false</recover>
     </job>
     <trigger>
       <simple>
-        <name>AutomationOrderGeneratorTrigger</name>
-        <group>AutomationOrderGeneratorTriggers</group>
-        <description>AutomationOrderGeneratorJob TRIGGER</description>
-        <job-name>AutomationOrderGeneratorJob</job-name>
-        <job-group>AutomationOrderGeneratorJobGroup</job-group>
+        <name>SampleTrigger</name>
+        <group>SampleTriggerGroup</group>
+        <description>Sample Trigger</description>
+        <job-name>SampleJob</job-name>
+        <job-group>SampleGroup</job-group>
         <misfire-instruction>SmartPolicy</misfire-instruction>
         <repeat-count>-1</repeat-count>
-        <repeat-interval>10000</repeat-interval>
+        <repeat-interval>1000</repeat-interval>
       </simple>
     </trigger>
   </schedule>

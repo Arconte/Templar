@@ -6,34 +6,32 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http.Dispatcher;
-using System.Web.Http.SelfHost;
-using Templar.Domain.Services.Repositories;
-using Templar.Domain.Services.Services;
-using Templar.Repository.SqlServer;
-using System.Web.Http;
-using Microsoft.Owin.Hosting;
 using System.Net;
 using System.Net.Sockets;
+using Quartz;
+using System.Collections.Specialized;
+using Quartz.Impl;
+using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Templar.ServiceAgent.Services;
+using Templar.ServiceAgent.Jobs;
 
-namespace Templar.Rest.Service.ServiceHost
+namespace Templar.ServiceAgent
 {
-    class AppHostFactory : IDisposable
+    public class AppHostFactory 
     {
         private IScheduler _Scheduler;
-
+        private string GlobalPolicy = "General";
+        private IUnityContainer Container = new UnityContainer(); 
         public void Start()
         {
 
+            this.ConfigureDependencies(); 
+
             NameValueCollection config = (NameValueCollection)ConfigurationManager.GetSection("quartz");
             var SchedulerFactory = new StdSchedulerFactory(config);
-
             this._Scheduler = SchedulerFactory.GetScheduler();
-            this._Scheduler.JobFactory = container.Resolve<Quartz.Spi.IJobFactory>();
-
-
+            this._Scheduler.JobFactory = new JobFactory(Container);
             this._Scheduler.Start();
-
         }
         public void Stop()
         {
@@ -48,24 +46,18 @@ namespace Templar.Rest.Service.ServiceHost
             catch (Exception ex)
             {
                 ExceptionPolicy.HandleException(ex, GlobalPolicy);
-            }
-         //   this.Dispose(true);
+            }   
         }
-        #region Configure Services
-  
-        #endregion
-        
-        public void Dispose()
+        #region Configure Dependencies
+
+        private void ConfigureDependencies()
         {
+            this.Container.RegisterType<IDummyService, DummyService>();
             
-         //   Dispose(true);
-            GC.SuppressFinalize(this);
+
         }
-        // only if you use unmanaged resources directly 
-        //~AppHostFactory()
-        //{
-        //    Dispose(false);
-        //}
+        #endregion        
+        
      
     }
 }
