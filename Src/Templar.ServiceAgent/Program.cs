@@ -12,6 +12,7 @@ namespace Templar.ServiceAgent
         private const string ServiceName = "Templar.ServiceAgent";
         static void Main()
         {
+            
             HostFactory.Run(x =>
             {
                 x.Service<AppHostFactory>(s =>
@@ -25,9 +26,11 @@ namespace Templar.ServiceAgent
                 x.SetDescription(ServiceName);
                 x.SetDisplayName(ServiceName);
                 x.SetServiceName(ServiceName);
-                x.RunAsNetworkService();
+                x.RunAsNetworkService();                
             }
          );
         }
+
+       
     }
 }

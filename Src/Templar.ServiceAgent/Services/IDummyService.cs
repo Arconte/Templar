@@ -9,6 +9,5 @@ namespace Templar.ServiceAgent.Services
     public interface IDummyService
     {
         DateTime GetDate(); 
-
     }
 }

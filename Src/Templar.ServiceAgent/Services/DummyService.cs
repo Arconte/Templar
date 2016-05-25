@@ -10,6 +10,7 @@ namespace Templar.ServiceAgent.Services
     {
         public DateTime GetDate()
         {
+            throw new ApplicationException(); 
             return DateTime.Now; 
         }
     }
