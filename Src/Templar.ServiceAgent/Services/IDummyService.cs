@@ -8,6 +8,7 @@ namespace Templar.ServiceAgent.Services
 {
     public interface IDummyService
     {
-        DateTime GetDate(); 
+        DateTime GetDate();
+        bool Ping(); 
     }
 }

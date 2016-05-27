@@ -20,6 +20,7 @@ using Microsoft.Practices.EnterpriseLibrary.Logging;
 using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging;
 using Microsoft.Practices.EnterpriseLibrary.Logging.Formatters;
 using Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 namespace Templar.ServiceAgent
 {
     public class AppHostFactory 
@@ -44,7 +45,7 @@ namespace Templar.ServiceAgent
             {
                 if (_Scheduler != null)
                 {
-                    this._Scheduler.PauseTriggers(global::Quartz.Impl.Matchers.GroupMatcher<TriggerKey>.AnyGroup());
+                    this._Scheduler.PauseTriggers(global::Quartz.Impl.Matchers.GroupMatcher<TriggerKey>.AnyGroup());                    
                     _Scheduler.Shutdown(true);
                 }
             }
@@ -61,38 +62,40 @@ namespace Templar.ServiceAgent
         }
 
         private void ConfigureLogger()
-        {
-            
-            var config = new LoggingConfiguration();
-            TextFormatter formatter = new TextFormatter();                          
-            var flatFileTraceListener = new RollingFlatFileTraceListener(
-                @".\Error_log.txt",                     
-                    "----------------------------------------", 
-                    "----------------------------------------", 
-                    formatter, 5000, maxArchivedFiles : 100);
-            config.AddLogSource("Default", SourceLevels.All, true)
-              .AddTraceListener(flatFileTraceListener);
-            LogWriter defaultWriter = new LogWriter(config);
-            Logger.SetLogWriter(defaultWriter);
+        {            
+            //var config = new LoggingConfiguration();
+            //TextFormatter formatter = new TextFormatter();                          
+            //var flatFileTraceListener = new RollingFlatFileTraceListener(
+            //    @".\Error_log.txt",                     
+            //        "----------------------------------------", 
+            //        "----------------------------------------", 
+            //        formatter, 5000, maxArchivedFiles : 100);
+            //config.AddLogSource("Default", SourceLevels.All, true)
+            //  .AddTraceListener(flatFileTraceListener);
+            //LogWriter defaultWriter = new LogWriter(config);
+            //Logger.SetLogWriter(defaultWriter);
+            DatabaseFactory.SetDatabaseProviderFactory(new DatabaseProviderFactory());
+            Logger.SetLogWriter((new LogWriterFactory()).Create());
+
         }
         private void ConfigureExceptionHandling()
-        {   
-            var entries = new List<ExceptionPolicyEntry>();
-            entries.Add(new ExceptionPolicyEntry(typeof(Exception),
-                PostHandlingAction.NotifyRethrow,
-                new IExceptionHandler[] { 
-                    new LoggingExceptionHandler("Default", 100, 
-                        System.Diagnostics.TraceEventType.Error, 
-                        "ServiceAgent", 1, typeof(XmlExceptionFormatter),
-                        Logger.Writer),
-                    new Microsoft.Practices.EnterpriseLibrary.Logging.Database.FormattedDatabaseTraceListener(, "WriteLog", "", 
-                        Logger.Writer, 
-                        )
-                }));            
+        {            
+            ExceptionPolicyFactory factory = new ExceptionPolicyFactory(ConfigurationSourceFactory.Create());
+            
+            //var entries = new List<ExceptionPolicyEntry>();
+            //entries.Add(new ExceptionPolicyEntry(typeof(Exception),
+            //    PostHandlingAction.NotifyRethrow,
+            //    new IExceptionHandler[] { 
+            //        new LoggingExceptionHandler("Default", 100, 
+            //            System.Diagnostics.TraceEventType.Error, 
+            //            "ServiceAgent", 1, typeof(XmlExceptionFormatter),
+            //            Logger.Writer)                    
+            //    }));            
 
-            var policies = new List<ExceptionPolicyDefinition>() { 
-                new ExceptionPolicyDefinition("General", entries )};                                    
-            ExceptionPolicy.SetExceptionManager(new ExceptionManager(policies));
+            //var policies = new List<ExceptionPolicyDefinition>() { 
+            //    new ExceptionPolicyDefinition("General", entries )};
+
+            ExceptionPolicy.SetExceptionManager(factory.CreateManager());
         }
         #endregion        
     }

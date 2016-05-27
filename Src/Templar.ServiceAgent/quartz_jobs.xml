@@ -27,5 +27,25 @@
         <repeat-interval>1000</repeat-interval>
       </simple>
     </trigger>
+    <job>
+      <name>NetworkJob</name>
+      <group>SampleGroup</group>
+      <description>SampleGroup</description>
+      <job-type>Templar.ServiceAgent.Jobs.NetworkJobSample, Templar.ServiceAgent</job-type>
+      <durable>false</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <simple>
+        <name>NetworkTrigger</name>
+        <group>NetworkTriggerGroup</group>
+        <description>Sample Trigger</description>
+        <job-name>NetworkJob</job-name>
+        <job-group>SampleGroup</job-group>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>-1</repeat-count>
+        <repeat-interval>1000</repeat-interval>
+      </simple>
+    </trigger>
   </schedule>
 </job-scheduling-data>

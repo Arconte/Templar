@@ -1,18 +1,18 @@
-﻿using Quartz;
+﻿using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
+using Quartz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Templar.ServiceAgent.Services;
-using Microsoft.Practices.EnterpriseLibrary.ExceptionHandling;
 namespace Templar.ServiceAgent.Jobs
 {
     [DisallowConcurrentExecution]
-    public class JobSample : IJob
+    public class NetworkJobSample : IJob
     {
         private IDummyService DummyService;
-        public JobSample(IDummyService DummyService)
+        public NetworkJobSample(IDummyService DummyService)
         {
             this.DummyService = DummyService;
         }
@@ -20,16 +20,16 @@ namespace Templar.ServiceAgent.Jobs
         {
             try
             {
-                Console.WriteLine(string.Format("hello world at {0}", this.DummyService.GetDate()));                                                       
+                this.DummyService.Ping();
             }
             catch (Exception ex)
-            {                
+            {
                 Exception rethrow = null;
                 if (ExceptionPolicy.HandleException(ex, "General", out rethrow))
                 {
-                    throw rethrow; 
+                    throw rethrow;
                 }
-            }            
+            }        
         }
     }
 }
